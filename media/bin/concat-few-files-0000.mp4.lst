@@ -1,0 +1,6 @@
+## File: video-from-files-0000.mp4.lst ##
+## Purpose: List of mediafiles to concatenate ##
+file 'cut-001.mp4'
+file 'cut-002.mp4'
+file './related/path/cut-003.mp4'
+file '/data/real/path/cut-004.mp4'
