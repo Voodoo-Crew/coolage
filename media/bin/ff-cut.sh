@@ -29,20 +29,13 @@ function usage () {
       IN_FILE - input video file
       OFFSET  - skip timeframe before start transformation
       TS_END  - stop process at this point
-
 EOM
 }
 
-showBanner "cut";
-
-##  ---------------------  DO NOT EDIT BELOW THIS LINE  --------------------  ##
-
-
-# printf "${BCyan}${On_Blue}IN_FILE${NC}: \t\t [${BCyan} ${IN_FILE} ${NC}]\n"
-
-
 ##  --------------  CUT a video from OFFSET to TS_END  ---------------------  ##
+
 function ffCut () {
+  showBanner "cut";
   local F_IN="$1";
   local OFFSET="$2";
   local TS_END="$3";

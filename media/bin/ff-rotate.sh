@@ -39,10 +39,10 @@ function usage () {
 EOM
 }
 
-showBanner "rotate";
 
 ##  ---------------------  DO NOT EDIT BELOW THIS LINE  --------------------  ##
 function ffRotate () {
+  showBanner "rotate";
   local F_IN="$1"
   local ANGLE=$2
   if [ -z ${ANGLE} ]; then ANGLE=90; fi

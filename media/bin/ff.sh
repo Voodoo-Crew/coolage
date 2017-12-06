@@ -37,6 +37,32 @@ function getDuration () {
 ##  ----------  EXTRACT IMAGES FROM a MEDIA FILE EVERY <FREQ> seconds ------  ##
 
 function ffThumbs () {
+  showBanner "_bw";
+  local F_IN="$1"
+  local FREQ=$2
+
+  local L=${#F_IN}
+  local BASE=${F_IN:0:-4}
+  local EXT=jpeg
+  local PREF="${BASE}-thumb"
+
+  if [ -z ${FREQ} ]; then FREQ=5; fi
+
+  ffmpeg  -hide_banner \
+          -i ${F_IN} \
+          -r ${FREQ} \
+          -f image2 \
+          "${PREF}-%04d.${EXT}";
+
+          # -s 640x640 \
+
+  echo -ne "[$FUNCNAME] Media [${BWhite}${F_IN}${NC}] ${BBlue}THUMBS${NC} ${BYellow}READY${NC} \n";
+}
+
+##  ------------------  CREATE VIDEO FROM set of IMAGES  -------------------  ##
+
+function ffThumbs () {
+  showBanner "_bw";
   local F_IN="$1"
   local FREQ=$2
 

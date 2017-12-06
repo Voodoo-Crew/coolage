@@ -19,11 +19,10 @@ F_FUNCS=${BD}/ff.sh
 if [ -f ${F_COL} ]; then source ${F_COL}; fi
 if [ -f ${F_FUNCS} ]; then source ${F_FUNCS}; fi
 
-showBanner "concat";
-
 ##  ------------------  CONCAT VIDEO FILES INTO ONE  -----------------------  ##
 
 function ffConcat () {
+  showBanner "concat";
   local F_LIST="$1";
   local F_OUT="$2";
   if [ -z ${F_LIST} || ! -f ${F_LIST} ]; then

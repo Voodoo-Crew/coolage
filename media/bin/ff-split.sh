@@ -44,11 +44,11 @@ function usage () {
 EOM
 }
 
-showBanner "split";
 
 ##  --------------------------  SPLIT MEDIA FILE  --------------------------  ##
 
 function ffSplit () {
+  showBanner "split";
   local F_IN="$1";
   local F_TS="$2";
   local SUFF=split;

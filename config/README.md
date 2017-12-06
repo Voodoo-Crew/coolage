@@ -1,10 +1,4 @@
-![Tower Strike Logo](../logo-tower-strike.png)
-
-Simulate a game where the goal is to kill the enemies by using a tower.
-
---------
-
-## Config Directory
+# Config Directory #
 
 Node-config reads configuration files in the ```./config``` directory for the running process, typically the application root.  This can be overridden by setting the ```$NODE_CONFIG_DIR``` environment variable to the directory containing your configuration files.
 
