@@ -8,12 +8,11 @@
 
 #   Consist of:
 #   -   usage
-#   -   ffSplit
+#   -   ffSplit()
 
 IN_FILE="$1"
 TS_FILE="$2"
 F_RESULT=
-# OUT_FILE="${BASE}.concat.${EXT}"
 
 ##  SOURCES
 BD=./bin
@@ -44,14 +43,13 @@ function usage () {
 EOM
 }
 
-
 ##  --------------------------  SPLIT MEDIA FILE  --------------------------  ##
 
 function ffSplit () {
   showBanner "split";
   local F_IN="$1";
   local F_TS="$2";
-  local SUFF=split;
+  local SUFF=episod;
   local BASE="${IN_FILE:0:-4}";
   local F_TPL="${BASE}-${SUFF}";
 
@@ -64,21 +62,23 @@ function ffSplit () {
   local TS_SS=
   local TS_TO=
 
-  IFS=$'\n'       # make newlines the only separator
-  set -f          # disable globbing
-  for TC in $(cat < "${F_TS}"); do
-    IC=$((${IC} + 1));
-    echo -e "[$FUNCNAME]${BCyan}IC${NC}: \t\t [${White} ${IC} ${NC}]";
+  IFS=$'\n';       # make newlines the only separator
+  set -f;          # disable globbing
+  for TC in $(cat < "${F_TS}");
+    do
+      IC=$((${IC} + 1));
+      echo -e "[$FUNCNAME]${BCyan}IC${NC}: \t\t [${White} ${IC} ${NC}]";
 
-    TS_SS=$(echo ${TC} | cut --delimiter=- --fields=1);
-    TS_TO=$(echo ${TC} | cut --delimiter=- --fields=2);
+      TS_SS=$(echo ${TC} | cut --delimiter=- --fields=1);
+      TS_TO=$(echo ${TC} | cut --delimiter=- --fields=2);
 
-    echo -e "[$FUNCNAME]${BCyan}TC${NC}: \t\t [${White} ${TC} ${NC}]";
-    echo -e "[$FUNCNAME]${BCyan}TS_SS${NC}: \t [${White} ${TS_SS} ${NC}]";
-    echo -e "[$FUNCNAME]${BCyan}TS_TO${NC}: \t [${White} ${TS_TO} ${NC}]";
+      echo -e "[$FUNCNAME]${BCyan}TC${NC}: \t\t [${White} ${TC} ${NC}]";
+      echo -e "[$FUNCNAME]${BCyan}TS_SS${NC}: \t [${White} ${TS_SS} ${NC}]";
+      echo -e "[$FUNCNAME]${BCyan}TS_TO${NC}: \t [${White} ${TS_TO} ${NC}]";
 
-    ffCut "${F_IN}" "${TS_SS}" "${TS_TO}" "${IC}";
-  done
+      ffCut "${F_IN}" "${TS_SS}" "${TS_TO}" "${IC}";
+    done
+  unset IFS
 }
 
 ##  ------------------------  EXAMPLE of EXECUTE  --------------------------  ##

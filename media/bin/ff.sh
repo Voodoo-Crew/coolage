@@ -6,6 +6,8 @@
 #   Consist of:
 #   -   showBanner
 #   -   getDuration
+#   -   ffThumbs
+#   -   ffAnimate
 #   -   showPalette
 
 BD=./bin
@@ -37,7 +39,7 @@ function getDuration () {
 ##  ----------  EXTRACT IMAGES FROM a MEDIA FILE EVERY <FREQ> seconds ------  ##
 
 function ffThumbs () {
-  showBanner "_bw";
+  showBanner;
   local F_IN="$1"
   local FREQ=$2
 
@@ -61,27 +63,76 @@ function ffThumbs () {
 
 ##  ------------------  CREATE VIDEO FROM set of IMAGES  -------------------  ##
 
-function ffThumbs () {
-  showBanner "_bw";
-  local F_IN="$1"
-  local FREQ=$2
+function ffAnimate () {
+  showBanner;
+  local F_DIR="$1"
 
   local L=${#F_IN}
   local BASE=${F_IN:0:-4}
   local EXT=jpeg
-  local PREF="${BASE}-thumb"
 
-  if [ -z ${FREQ} ]; then FREQ=5; fi
+  local PREF="animation"
+  local F_MASK="${PREF}-*.${EXT}"
+  local F_OUT="M1.avi"
 
   ffmpeg  -hide_banner \
-          -i ${F_IN} \
-          -r ${FREQ} \
-          -f image2 \
-          "${PREF}-%04d.${EXT}";
+          -r 15 \
+          -f concat \
+          -safe 0 \
+          -i "./animate-images.txt" \
+          -vf "fps=25,format=yuv420p" \
+          -y ${F_OUT};
 
+          # -vcodec mpeg4 \
+          # -s 640x360 \
+
+  # ffmpeg  -hide_banner \
+  #         -framerate 10 \
+  #         -pattern_type glob \
+  #         -i "MOVI0000-thumb-*.jpeg" \
+  #         -y ${F_OUT};
+
+          # -f image2 \
           # -s 640x640 \
 
-  echo -ne "[$FUNCNAME] Media [${BWhite}${F_IN}${NC}] ${BBlue}THUMBS${NC} ${BYellow}READY${NC} \n";
+  echo -ne "[$FUNCNAME] Media ready: [${BYellow}${F_OUT}${NC}] \n";
+}
+
+##  ------------------  CREATE VIDEO FROM set of IMAGES  -------------------  ##
+
+function ffSlideshow () {
+  showBanner;
+  local F_DIR="$1"
+
+  local L=${#F_IN}
+  local BASE=${F_IN:0:-4}
+  local EXT=jpeg
+
+  local PREF="video-thumb"
+  local F_MASK="${PREF}-*.${EXT}"
+  local F_OUT="M1.avi"
+
+  ffmpeg  -hide_banner \
+          -r 10 \
+          -f concat \
+          -safe 0 \
+          -i "./animate-images.txt" \
+          -vf "fps=25,format=yuv420p" \
+          -y ${F_OUT};
+
+          # -vcodec mpeg4 \
+          # -s 640x360 \
+
+  # ffmpeg  -hide_banner \
+  #         -framerate 10 \
+  #         -pattern_type glob \
+  #         -i "MOVI0247-Branches-thumb-*.jpeg" \
+  #         -y ${F_OUT};
+
+          # -f image2 \
+          # -s 640x640 \
+
+  echo -ne "[$FUNCNAME] Media ready: [${BYellow}${F_OUT}${NC}] \n";
 }
 
 ##  ----------------------------  SHOW PALETTE  ----------------------------  ##

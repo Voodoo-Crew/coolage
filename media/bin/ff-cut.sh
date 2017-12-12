@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 ##  ------------------------------------------------------------------------  ##
-##               Cut a part of video file into new file                       ##
+##               Cut one episod from video file and save it                   ##
 ##  ------------------------------------------------------------------------  ##
 #
 #   Consist of:
-#   -   usage
-#   -   ffCut
+#   - usage
+#   - ffCut
 
 IN_FILE=$1
 F_RESULT=
@@ -35,27 +35,29 @@ EOM
 ##  --------------  CUT a video from OFFSET to TS_END  ---------------------  ##
 
 function ffCut () {
-  showBanner "cut";
   local F_IN="$1";
   local OFFSET="$2";
   local TS_END="$3";
   local F_CNT="$4";
 
+  local SUFF=cut
+  showBanner ${SUFF};
+
   if [ -z ${F_CNT} ]; then
     F_CNT=$(date +"%s");
   fi
 
-  local L=${#F_IN};
-  local BASE=${F_IN:0:-4};
-  local EXT=${F_IN:L-3:L};
-  local F_OUT="${BASE}-cut-${F_CNT}.${EXT}";
+  local L=${#F_IN}
+  local BASE=${F_IN:0:-4}
+  local EXT=${F_IN:L-3:L}
+  local F_OUT="${BASE}-cut-${F_CNT}.${EXT}"
 
   echo -ne "[$FUNCNAME]${BCyan}TIME_FRAME${NC}: \t [${BYellow}${OFFSET} - ${TS_END}${NC}] \n";
 
   ffmpeg  -hide_banner \
-          -ss "${OFFSET}" \
+          -ss ${OFFSET} \
           -i "${F_IN}" \
-          [ -z ${TS_END} ] ; then -to "${TS_END}"; fi \
+          $(if [ ! -z ${TS_END} ] ; then echo -to "${TS_END}"; fi) \
           -c copy \
           -copyts \
           -y ${F_OUT} 2>&1 >/dev/null;
