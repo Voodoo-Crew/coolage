@@ -1,7 +1,7 @@
 # BASH tips, notes and a lot of other cool and pretty stuff #
 
 <p align="center">
-  <img src="assets/img/bash-logo-web.png" alt="Bash Logo" />
+  <img src="../assets/img/bash-logo-web.png" alt="Bash Logo" />
 </p>
 
 `bash` `tips` `gists`
