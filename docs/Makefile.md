@@ -1,12 +1,6 @@
 # Makefile documentation highlights #
 
------
-
-## Source Articles ##
-
-[GNU Make in Detail for Beginners](http://opensourceforu.com/2012/06/gnu-make-in-detail-for-beginners/)
-
------
+---
 
 ## Dealing with assignments ##
 There are different ways of assigning variables in a Makefile. They are (type of assignment, followed by the operator in parentheses):
@@ -59,4 +53,10 @@ Inside actions, we can use special variables for matching filenames. Some of the
 -  `$<` (name of the first dependency)
 -  `$^` (name of all the dependencies with space as the delimiter)
 
------
+---
+
+## Source Articles ##
+
+[GNU Make in Detail for Beginners](http://opensourceforu.com/2012/06/gnu-make-in-detail-for-beginners/)
+
+---

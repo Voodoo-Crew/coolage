@@ -1,6 +1,6 @@
-## Most Common Module's Process Lifecycle Statuses ##
+# Most Common Module's Process Lifecycle Statuses #
 
-### Structured View ###
+## Structured View ##
 
   Num | Entity | Status | Info | Icon
 ------|--------|--------|------|------
@@ -26,10 +26,14 @@
 :computer: | Server | Hybernate | |
 :parking: | Process | Busy | :b: |
 
-### Simple List View ###
+---
 
-*   [ ] **Queued**:   You’re in line and your task will be processed soon.
-    Queue time varies depending on number of concurrent tasks available to user.
-*   [ ] **Building**: The image is being built.
-*   [x] **Success**:  The image has been built with no issues.
-*   [ ] **Error**:    There was an issue with your image.
+## Simple List View ##
+
+* [ ] **Queued**:   You’re in line and your task will be processed soon.
+  Queue time varies depending on number of concurrent tasks available to user.
+* [ ] **Building**: The image is being built.
+* [x] **Success**:  The image has been built with no issues.
+* [ ] **Error**:    There was an issue with your image.
+
+---

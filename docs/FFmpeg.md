@@ -49,7 +49,8 @@ path when launching `configure`, e.g. `/ffmpeg-dir/ffmpeg/configure`.
 4.1 Type `make` to build FFmpeg. GNU Make 3.81 or later is required.
 4.2 Type `make install` to install all binaries and libraries you built.
 
+
 NOTICE
-------
+---
 
  - Non system dependencies (e.g. libx264, libvpx) are disabled by default.

@@ -1,5 +1,13 @@
 # BASH tips, notes and a lot of other cool and pretty stuff #
 
+<p align="center">
+  <img src="assets/img/bash-logo-web.png" alt="Bash Logo" />
+</p>
+
+`bash` `tips` `gists`
+
+---
+
 ## How to determine function name from inside a function  ##
 
 ### `$FUNCNAME` ###
@@ -21,22 +29,20 @@ file `${BASH_SOURCE[$i+1]}` at line number `${BASH_LINENO[$i]}`.
 The caller builtin displays the current call stack using this information.
 </details>
 
-
------
+---
 
 ## Special Variables ##
 
 [Source](https://ryanstutorials.net/bash-scripting-tutorial/bash-variables.php)
 
 - `$0` - The name of the Bash script.
-- `$1` - $9 - The first 9 arguments to the Bash script. (As mentioned above.)
+- `$1 - $9` - The first 9 arguments to the Bash script. (As mentioned above.)
 - `$#` - How many arguments were passed to the Bash script.
 - `$@` - All the positional parameters supplied to the Bash script - output is one COLUMN
 - `$*` - All the positional parameters supplied to the Bash script - output is one LINE
 - `$?` - The exit status of the most recently run process.
+- `$!` - PID of the last background process started
 - `$$` - The process ID of the current script.
-- `$!` - PID последнего запущенного в фоне процесса
-- `$$` - PID самого скрипта
 
 - `$FUNCNAME` - current function name inside a script
 - `$USER` - The username of the user running the script.
@@ -48,23 +54,23 @@ The caller builtin displays the current call stack using this information.
 - `$LINENO` - the current line number in the Bash script.
 - `$HOME` - user home directory path
 
-- `$DIRSTACK` - содержимое вершины стека каталогов
-- `$EDITOR` - текстовый редактор по умолчанию
-- `$EUID` - Эффективный UID. Если вы использовали программу su для выполнения команд от другого пользователя, то эта переменная содержит UID этого пользователя, в то время как...
-- `$UID` - ...содержит реальный идентификатор, который устанавливается только при логине.
-- `$GROUPS` - массив групп к которым принадлежит текущий пользователь
-- `$LC_CTYPE` - внутренняя переменная, котороя определяет кодировку символов
-- `$OLDPWD` - прежний рабочий каталог
-- `$PATH` - путь поиска программ
-- `$PPID` - идентификатор родительского процесса
+- `$DIRSTACK` - system path to current process
+- `$EDITOR` - text editor to edit files with
+- `$EUID` - effective UID
+- `$UID` - logged in user ID
+- `$GROUPS` - list of groups [in which -???- where] current user is a member
+- `$LC_CTYPE` - system variable that is responsible for terminal output codepage
+- `$OLDPWD` - previous working directory
+- `$PATH` - list of directories to search for libraries
+- `$PPID` - PID of parent process
 
---------
+---
 
 ### Source Links ###
 
-[:hash: Bash Scripting Tutorial - Ryans](https://ryanstutorials.net/bash-scripting-tutorial)
+:hash: [Bash Scripting Tutorial - Ryans](https://ryanstutorials.net/bash-scripting-tutorial)
 
---------
+---
 
 ### Related info ###
 
@@ -74,4 +80,4 @@ The caller builtin displays the current call stack using this information.
  - [Linking containers](https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks.md)
  - [Cross-host linking containers](https://docs.docker.com/engine/admin/ambassador_pattern_linking.md)
 
---------
+---
