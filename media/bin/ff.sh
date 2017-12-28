@@ -8,6 +8,7 @@
 #   -   getDuration
 #   -   ffThumbs
 #   -   ffAnimate
+#   -   ffSlideshow
 #   -   showPalette
 
 BD=./bin
@@ -19,7 +20,7 @@ function showBanner () {
     if [ -z ${SUFF} ]; then
     SUFF=_default;
   fi
-  local BANNER=${BD}/banner/${SUFF};
+  local BANNER=./assets/banner/${SUFF};
   if [ -f ${BANNER} ]; then
     cat ${BANNER};
     echo -ne "\n";
