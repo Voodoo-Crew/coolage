@@ -25,7 +25,8 @@ We will also have an interesting and useful application further in the article, 
 ### Conditional assignment (?=) ###
 
 Conditional assignment statements assign the given value to the variable only if the variable does not yet have a value.
-Appending (+=)
+
+### Appending (+=) ###
 
 The appending operation appends texts to an existing variable. For example:
 ```
@@ -55,8 +56,11 @@ Inside actions, we can use special variables for matching filenames. Some of the
 
 ---
 
-## Source Articles ##
+## :pushpin: Source Articles ##
 
-[GNU Make in Detail for Beginners](http://opensourceforu.com/2012/06/gnu-make-in-detail-for-beginners/)
+| # | Resource |
+|:-:|:---------|
+| :white_check_mark: | [GNU Make](https://www.gnu.org/software/make/manual/make.html) |
+| :white_check_mark: | [GNU Make in Detail for Beginners](http://opensourceforu.com/2012/06/gnu-make-in-detail-for-beginners/) |
 
 ---

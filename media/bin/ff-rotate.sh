@@ -12,9 +12,7 @@
 
 IN_FILE="$1"
 ANGLE=$2
-if [ -z ${ANGLE} ]; then
-  ANGLE=90
-fi
+if [ -z ${ANGLE} ]; then ANGLE=90; fi
 RADS="${ANGLE}*PI/180"
 F_RESULT=
 

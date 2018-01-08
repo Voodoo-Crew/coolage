@@ -16,24 +16,19 @@ BD=./bin
 ##  -------------------------------- BANNER  -------------------------------  ##
 
 function showBanner () {
-  local SUFF="$1";
-    if [ -z ${SUFF} ]; then
-    SUFF=_default;
-  fi
-  local BANNER=./assets/banner/${SUFF};
-  if [ -f ${BANNER} ]; then
-    cat ${BANNER};
-    echo -ne "\n";
-  fi
+  local SUFF="$1"
+  if [ -z ${SUFF} ]; then SUFF=_default; fi
+  local BANNER=${BD}/banner/${SUFF}
+  if [ -f ${BANNER} ]; then cat ${BANNER}; fi
 }
 
 ##  -------------------------  GET MEDIA DURATION  -------------------------  ##
 
 function getDuration () {
-  local F_IN="$1";
+  local F_IN="$1"
   if [ -f ${F_IN} ]; then
-    local V_DURATION="$(ffmpeg -i ${F_IN} 2>&1 | grep Duration | cut -f4 -d' ' | cut -f1 -d',')";
-    echo -ne "[$FUNCNAME] Media [${BWhite}${F_IN}${NC}]: ${BBlue}DURATION${NC} = ${BYellow}${V_DURATION}${NC} \n";
+    local V_DURATION="$(ffprobe -hide_banner -i ${F_IN} 2>&1 | grep Duration | cut -f4 -d' ' | cut -f1 -d',')";
+    echo -e "[${Blue}$FUNCNAME${NC}] Media \t [${Purple}${F_IN}${NC}] ${BGreen}DURATION${NC} = [${BYellow}${V_DURATION}${NC}]"
   fi
 }
 
@@ -59,7 +54,7 @@ function ffThumbs () {
 
           # -s 640x640 \
 
-  echo -ne "[$FUNCNAME] Media [${BWhite}${F_IN}${NC}] ${BBlue}THUMBS${NC} ${BYellow}READY${NC} \n";
+  echo -ne "[${Blue}$FUNCNAME${NC}] Media [${BWhite}${F_IN}${NC}] ${BBlue}THUMBS${NC} ${BYellow}READY${NC} \n";
 }
 
 ##  ------------------  CREATE VIDEO FROM set of IMAGES  -------------------  ##
@@ -96,7 +91,7 @@ function ffAnimate () {
           # -f image2 \
           # -s 640x640 \
 
-  echo -ne "[$FUNCNAME] Media ready: [${BYellow}${F_OUT}${NC}] \n";
+  echo -ne "[${Blue}$FUNCNAME${NC}] Media ready: [${BYellow}${F_OUT}${NC}] \n";
 }
 
 ##  ------------------  CREATE VIDEO FROM set of IMAGES  -------------------  ##
@@ -133,7 +128,7 @@ function ffSlideshow () {
           # -f image2 \
           # -s 640x640 \
 
-  echo -ne "[$FUNCNAME] Media ready: [${BYellow}${F_OUT}${NC}] \n";
+  echo -e "[${Blue}$FUNCNAME${NC}] Media ready: [${BYellow}${F_OUT}${NC}]";
 }
 
 ##  ----------------------------  SHOW PALETTE  ----------------------------  ##
