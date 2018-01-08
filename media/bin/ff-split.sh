@@ -47,42 +47,53 @@ EOM
 
 function ffSplit () {
   showBanner "split";
-  local F_IN="$1";
-  local F_TS="$2";
-  local SUFF=episod;
-  local BASE="${IN_FILE:0:-4}";
-  local F_TPL="${BASE}-${SUFF}";
+  local F_IN="$1"
+  local F_TS="$2"
 
-  echo -ne "[$FUNCNAME]${BCyan}MEDIA_FILE${NC}: \t [${White}${F_IN}${NC}]\n";
-  echo -ne "[$FUNCNAME]${BCyan}TIMECODES_FILE${NC}: [${White}${F_TS}${NC}]\n";
-  echo -ne "[$FUNCNAME]${BCyan}BASE${NC}: \t\t [${White}${BASE}${NC}]\n";
-  echo -ne "[$FUNCNAME]${BCyan}F_TPL${NC}: \t [${White}${F_TPL}${NC}]\n";
+  local SUFF="clip"
+  local BASE="${F_IN:0:-4}"
+  local F_TPL="${BASE}-${SUFF}"
+  local F_LOG="${F_IN}.clips"
+
+  if [ -f ${F_LOG} ]; then rm -f ${F_LOG}; fi
+  echo -e "## Source File: ${F_IN} ##" >> "${F_LOG}"
+
+  echo -e "[${Blue}$FUNCNAME${NC}] ${BCyan}MEDIA_FILE${NC}: \t [${Yellow}${F_IN}${NC}]"
+  echo -e "[${Blue}$FUNCNAME${NC}] ${BCyan}F_LOG${NC}: \t [${Yellow}${F_LOG}${NC}]"
+  echo -e "[${Blue}$FUNCNAME${NC}] ${BCyan}TIMECODES${NC}: \t [${Yellow}${F_TS}${NC}]"
+  # echo -e "[${Blue}$FUNCNAME${NC}] ${BCyan}SUFF${NC}: \t [${White}${SUFF}${NC}]"
+  # echo -e "[${Blue}$FUNCNAME${NC}] ${BCyan}BASE${NC}: \t [${White}${BASE}${NC}]"
+  # echo -e "[${Blue}$FUNCNAME${NC}] ${BCyan}F_TPL${NC}: \t [${Yellow}${F_TPL}${NC}]"
 
   local IC=0
   local TS_SS=
   local TS_TO=
 
-  IFS=$'\n';       # make newlines the only separator
-  set -f;          # disable globbing
+  IFS=$'\n'       # make newlines the only separator
+  set -f          # disable globbing
+
   for TC in $(cat < "${F_TS}");
     do
-      IC=$((${IC} + 1));
-      echo -e "[$FUNCNAME]${BCyan}IC${NC}: \t\t [${White} ${IC} ${NC}]";
+      IC=$((${IC} + 1))
+      echo -e "[${Blue}$FUNCNAME${NC}] ${BCyan}PART${NC}: \t [${Yellow} ${IC} ${NC}]"
 
-      TS_SS=$(echo ${TC} | cut --delimiter=- --fields=1);
-      TS_TO=$(echo ${TC} | cut --delimiter=- --fields=2);
+      TS_SS=$(echo "${TC}" | cut --delimiter=- --fields=1 | tr -d " ")
+      TS_TO=$(echo "${TC}" | cut --delimiter=- --fields=2 | tr -d " ")
 
-      echo -e "[$FUNCNAME]${BCyan}TC${NC}: \t\t [${White} ${TC} ${NC}]";
-      echo -e "[$FUNCNAME]${BCyan}TS_SS${NC}: \t [${White} ${TS_SS} ${NC}]";
-      echo -e "[$FUNCNAME]${BCyan}TS_TO${NC}: \t [${White} ${TS_TO} ${NC}]";
+      # echo -e "[${Blue}$FUNCNAME${NC}] ${BCyan}TC${NC}: \t\t [${White} ${TC} ${NC}]"
+      # echo -e "[${Blue}$FUNCNAME${NC}] ${BCyan}TS_SS${NC}: \t [${White} ${TS_SS} ${NC}]"
+      # echo -e "[${Blue}$FUNCNAME${NC}] ${BCyan}TS_TO${NC}: \t [${White} ${TS_TO} ${NC}]"
 
-      ffCut "${F_IN}" "${TS_SS}" "${TS_TO}" "${IC}";
+      ffCut "${F_IN}" "${TS_SS}" "${TS_TO}" "${IC}"
     done
   unset IFS
+  return 0
 }
 
 ##  ------------------------  EXAMPLE of EXECUTE  --------------------------  ##
 
-ffSplit "${IN_FILE}" "${TS_FILE}";
+if [ -f ${IN_FILE} ]; then
+  ffSplit "${IN_FILE}" "${TS_FILE}"
+fi
 
-echo -ne "\n\n ${BYellow} ALL Operations ${BGreen}${On_Black}COMPLETED${NC}\n\n";
+echo -e "\n\n ${BYellow}SPLIT${NC} Operations ${BGreen}${On_Black}COMPLETED${NC}\n\n"

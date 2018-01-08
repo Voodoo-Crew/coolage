@@ -58,7 +58,7 @@ The caller builtin displays the current call stack using this information.
 - `$EDITOR` - text editor to edit files with
 - `$EUID` - effective UID
 - `$UID` - logged in user ID
-- `$GROUPS` - list of groups [in which -???- where] current user is a member
+- `$GROUPS` - list of groups where current user is a member
 - `$LC_CTYPE` - system variable that is responsible for terminal output codepage
 - `$OLDPWD` - previous working directory
 - `$PATH` - list of directories to search for libraries
