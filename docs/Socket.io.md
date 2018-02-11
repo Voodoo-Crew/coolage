@@ -1,7 +1,7 @@
 # Socket.io #
 
 <p align="center">
-  <img src="../assets/img/io-logo.png" alt="IO Logo" style="width:200px; height:200px" />
+  <img src="../assets/img/io-logo.png" alt="IO Logo" style="width:150px; height:150px" />
 </p>
 
 `socket.io` `tips` `gists`
