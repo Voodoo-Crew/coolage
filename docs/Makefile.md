@@ -13,7 +13,8 @@ For example, when a `CC := ${GCC} ${FLAGS}` simple definition is first encounter
 ### Recursive assignment (=) ###
 
 Recursive assignment (the operator used is =) involves variables and values that are not evaluated immediately on encountering their definition, but are re-evaluated every time they are encountered in an action that is being executed. As an example, say we have:
-```
+
+```Makefile
 GCC = gcc
 FLAGS = -W
 ```
@@ -29,7 +30,7 @@ Conditional assignment statements assign the given value to the variable only if
 ### Appending (+=) ###
 
 The appending operation appends texts to an existing variable. For example:
-```
+```Makefile
 CC = gcc
 CC += -W
 ```
@@ -40,7 +41,7 @@ Though variable assignments can occur in any part of the Makefile, on a new line
 ## Using patterns and special variables ##
 
 The % character can be used for wildcard pattern-matching, to provide generic targets. For example:
-```
+```Makefile
 %.o: %.c
 [TAB] actions
 ```
@@ -48,7 +49,7 @@ When `%` appears in the dependency list, it is replaced with the same string tha
 
 Inside actions, we can use special variables for matching filenames. Some of them are:
 
--  `$@` (full target name of the current target)
+-  `$@` (full name of the current target)
 -  `$?` (returns the dependencies that are newer than the current target)
 -  `$*` (returns the text that corresponds to % in the target)
 -  `$<` (name of the first dependency)
@@ -56,11 +57,13 @@ Inside actions, we can use special variables for matching filenames. Some of the
 
 ---
 
-## :pushpin: Source Articles ##
+## :pushpin: Resources ##
 
-| # | Resource |
-|:-:|:---------|
-| :white_check_mark: | [GNU Make](https://www.gnu.org/software/make/manual/make.html) |
-| :white_check_mark: | [GNU Make in Detail for Beginners](http://opensourceforu.com/2012/06/gnu-make-in-detail-for-beginners/) |
+| :+1: | Article |
+|:----:|:--------|
+| :four: | [GNU Make in Detail for Beginners](http://opensourceforu.com/2012/06/gnu-make-in-detail-for-beginners/) |
+| :five: | [GNU Make](https://www.gnu.org/software/make/manual/make.html) |
 
 ---
+
+:scorpius:
