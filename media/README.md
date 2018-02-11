@@ -22,7 +22,7 @@ The first command will cut from 00:01:00 to 00:03:00 (in the original), using th
 The second command will cut from 00:01:00 to 00:02:00, as intended, using the slower seek. <br />
 The third command will cut from 00:01:00 to 00:02:00, as intended, using the faster seek.
 
-```bash
+```shell
 $ ffmpeg -ss 00:01:00 -i video.mp4 -to 00:02:00 -c copy cut.mp4
 $ ffmpeg -i video.mp4 -ss 00:01:00 -to 00:02:00 -c copy cut.mp4
 $ ffmpeg -ss 00:01:00 -i video.mp4 -to 00:02:00 -c copy -copyts cut.mp4
@@ -34,7 +34,7 @@ $ ffmpeg -ss 00:01:00 -i video.mp4 -to 00:02:00 -c copy -copyts cut.mp4
 
 Use ffmpeg to trim an audio file without re-encoding it.
 
-```bash
+```shell
 # Trim starting from 10 seconds and end at 16 seconds (total time 6 seconds)
 $ ffmpeg -i input.mp3 -ss 10 -t 6 -acodec copy output.mp3
 
@@ -53,13 +53,13 @@ $ ffmpeg -i input.mp3 -ss 00:02:54.583 -t 300 -acodec copy output.mp3
 
 ### Concatenation of files with same codecs ###
 
-#### Concat demuxer ###
+#### Concat demuxer ####
 The concat demuxer was added to FFmpeg 1.1. You can read about it in the [documentation](https://ffmpeg.org/ffmpeg-formats.html#concat).
 
 ##### Instructions #####
 Create a file **files-list.txt** with all the files you want to have concatenated in the following form (lines starting with a # are ignored):
 
-```bash
+```shell
 $ cat files-list.txt
 ## List of mediafiles to concatenate ##
 file '/path/to/file1.mp4'
@@ -69,7 +69,7 @@ file '/path/to/file3.mp4'
 Note that these can be either relative or absolute paths.
 
 Then you can stream copy or re-encode your files:
-```bash
+```shell
 $ ffmpeg -f concat -safe 0 -i files-list.txt -c copy output
 ```
 The `-safe 0` above is not required if the paths are relative.
@@ -78,7 +78,7 @@ The `-safe 0` above is not required if the paths are relative.
 
 ## Bitstream Filters ##
 
-```bash
+```shell
 $ ffmpeg -i INPUT -c:v copy -bsf:v filter1[=opt1=str1:opt2=str2][,filter2] OUTPUT
 ```
 

@@ -81,3 +81,5 @@ The caller builtin displays the current call stack using this information.
  - [Cross-host linking containers](https://docs.docker.com/engine/admin/ambassador_pattern_linking.md)
 
 ---
+
+:scorpius:

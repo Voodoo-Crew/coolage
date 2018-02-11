@@ -1,7 +1,7 @@
 # Socket.io #
 
 <p align="center">
-  <img src="../assets/img/io-logo.png" alt="IO Logo" />
+  <img src="../assets/img/io-logo.png" alt="IO Logo" style="width:150px; height:150px" />
 </p>
 
 `socket.io` `tips` `gists`
@@ -79,3 +79,5 @@ function onConnect (socket) {
  - [Cross-host linking containers](https://docs.docker.com/engine/admin/ambassador_pattern_linking.md)
 
 ---
+
+:scorpius:
