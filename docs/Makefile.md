@@ -21,8 +21,6 @@ FLAGS = -W
 
 With the above lines, `CC = ${GCC} {FLAGS}` will be converted to gcc -W only when an action like ${CC} file.c is executed somewhere in the Makefile. With recursive assignation, if the GCC variable is changed later (for example, GCC = c++), then when it is next encountered in an action line that is being updated, it will be re-evaluated, and the new value will be used; ${CC} will now expand to c++ -W.
 
-We will also have an interesting and useful application further in the article, where this feature is used to deal with varying cases of filename extensions of image files.
-
 ### Conditional assignment (?=) ###
 
 Conditional assignment statements assign the given value to the variable only if the variable does not yet have a value.
