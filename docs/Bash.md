@@ -1,5 +1,8 @@
 # BASH tips, notes and a lot of other cool and pretty stuff #
 
+[![Standard Version](https://img.shields.io/badge/release-standard%20version-brightgreen.svg?style=plastic)](https://github.com/conventional-changelog/standard-version)
+[![Contributors](https://img.shields.io/github/contributors/Voodoo-Crew/coolage.svg)](https://github.com/Voodoo-Crew/coolage/graphs/contributors)
+
 <p align="center">
   <img src="../assets/img/bash-logo-web.png" alt="Bash Logo" />
 </p>
@@ -54,21 +57,30 @@ The caller builtin displays the current call stack using this information.
 - `$LINENO` - the current line number in the Bash script.
 - `$HOME` - user home directory path
 
-- `$DIRSTACK` - system path to current process
 - `$EDITOR` - text editor to edit files with
 - `$EUID` - effective UID
 - `$UID` - logged in user ID
+- `$PPID` - PID of parent process
 - `$GROUPS` - list of groups where current user is a member
 - `$LC_CTYPE` - system variable that is responsible for terminal output codepage
+- `$PWD` - current working directory
 - `$OLDPWD` - previous working directory
-- `$PATH` - list of directories to search for libraries
-- `$PPID` - PID of parent process
+- `$PATH` - list of directories to search for executables
+- `$LD_LIBRARY_PATH` - list of dirs to search for libs
+- `$DIRSTACK` - list of all $PWD for each cd call
+- `$DIRSTACK[-1]` - equal to $PWD
 
 ---
 
 ### Source Links ###
 
 :hash: [Bash Scripting Tutorial - Ryans](https://ryanstutorials.net/bash-scripting-tutorial)
+
+---
+
+### :clap: Contributors ###
+
+- [Eugene Taranov](https://github.com/eugenetaranov)
 
 ---
 
