@@ -55,6 +55,16 @@ Inside actions, we can use special variables for matching filenames. Some of the
 
 ---
 
+## Lists all targets defined in makefile ##
+
+```Makefile
+.PHONY: list
+list:
+	@$(MAKE) -pRrn : -f $(MAKEFILE_LIST) 2>/dev/null | awk -v RS= -F: '/^# File/,/^# Finished Make data base/ {if ($$1 !~ "^[#.]") {print $$1}}' | egrep -v -e '^[^[:alnum:]]' -e '^$@$$' | sort
+```
+
+---
+
 ## :pushpin: Resources ##
 
 | :+1: | Article |
