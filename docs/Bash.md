@@ -66,9 +66,10 @@ The caller builtin displays the current call stack using this information.
 - `$PWD` - current working directory
 - `$OLDPWD` - previous working directory
 - `$PATH` - list of directories to search for executables
+- `$LD_PRELOAD` - list of specific libraries (files) to be loaded before any other libraries, whether the program wants it or not
 - `$LD_LIBRARY_PATH` - list of dirs to search for libs
-- `$DIRSTACK` - list of all $PWD for each cd call
-- `$DIRSTACK[-1]` - equal to $PWD
+- `$DIRSTACK` - list of all `$PWD` for each cd call
+- `$DIRSTACK[-1]` - equal to `$PWD`
 
 ---
 
@@ -81,6 +82,7 @@ The caller builtin displays the current call stack using this information.
 ### :clap: Contributors ###
 
 - [Eugene Taranov](https://github.com/eugenetaranov)
+- [Dima Leonenko](https://github.com/dmytroleonenko)
 
 ---
 
