@@ -1,3 +1,3 @@
-# gists #
+# Coolage #
 
-Collections of scripts, docs, snippets, configs and other useful lines
+Collection of scripts, docs, snippets, configs and other useful lines
