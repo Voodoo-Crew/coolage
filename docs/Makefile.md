@@ -47,11 +47,11 @@ When `%` appears in the dependency list, it is replaced with the same string tha
 
 Inside actions, we can use special variables for matching filenames. Some of them are:
 
--  `$@` (full name of the current target)
--  `$?` (returns the dependencies that are newer than the current target)
--  `$*` (returns the text that corresponds to % in the target)
--  `$<` (name of the first dependency)
--  `$^` (name of all the dependencies with space as the delimiter)
+- `$@` (full name of the current target)
+- `$?` (returns the dependencies that are newer than the current target)
+- `$*` (returns the text that corresponds to % in the target)
+- `$<` (name of the first dependency)
+- `$^` (name of all the dependencies with space as the delimiter)
 
 ---
 
