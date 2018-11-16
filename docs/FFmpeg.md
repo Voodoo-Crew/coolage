@@ -15,14 +15,18 @@ $ sudo apt-get install -y             \
                 libx264-dev           \
                 libavutil-dev         \
                 libass-dev            \
-                libmp3lame-dev
+                libmp3lame-dev        \
+                libflite1
 ```
 
 ## 2. Download sources ##
 
 ```shell
-$ git clone git://source.ffmpeg.org/ffmpeg.git        # origin
-$ git clone https://github.com/FFmpeg/FFmpeg ffmpeg   # github-mirror
+# origin
+$ git clone git://source.ffmpeg.org/ffmpeg.git
+
+# github-mirror
+$ git clone https://github.com/FFmpeg/FFmpeg ffmpeg
 $ cd ffmpeg
 ```
 
@@ -40,7 +44,8 @@ $ ./configure --enable-gpl              \
               --enable-libfribidi       \
               --enable-libx264          \
               --enable-libass           \
-              --enable-libmp3lame
+              --enable-libmp3lame       \
+              --enable-libflite
 ```
 
   `configure` can be launched from a directory different from the FFmpeg

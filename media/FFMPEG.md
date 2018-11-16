@@ -76,7 +76,7 @@ Note that these can be either relative or absolute paths.
 
 Then you can stream copy or re-encode your files:
 ```shell
-$ ffmpeg -f concat -safe 0 -i files-list.txt -c copy output
+$ ffmpeg -f concat -safe 0 -i files-list.txt -c copy -y output.mp4
 ```
 The `-safe 0` above is not required if the paths are relative.
 

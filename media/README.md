@@ -1,7 +1,7 @@
-# **BASH tools** to easy operate on media files #
+# **FFMPEG tools** to easy operate on media files #
 
 <p align="center">
-<img src="../assets/img/bash-logo-web.png" alt="Bash Logo" />
+  <img src="../assets/img/bash-logo-web.png" alt="FFMPEG tools Logo" />
 </p>
 
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/tbaltrushaitis/bash-files/blob/master/LICENSE)
@@ -15,9 +15,9 @@ Set of useful configuration tweak-files for OS Linux shell
 
 ## Table of contents ##
 
-- [Operations on video files with FFMpeg - cut, split, trim, concat, join, rotate, etc.](./FFMPEG.md)
+- [Operations on video files with FFMpeg](./FFMPEG.md) - cut, split, trim, concat, join, rotate, etc.
 - [Capture Video from Devices](./VIDEO-CAPTURE.md)
-- [Download from YouTube easy from command line](./YOUTUBE-DOWNLOADER.md)
+- [Download from YouTube easy within command line](./YOUTUBE-DOWNLOADER.md)
 
 ---
 

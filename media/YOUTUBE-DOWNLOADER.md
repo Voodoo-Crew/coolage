@@ -1,27 +1,33 @@
-# Download video from YouTube #
+# YouTube video downloader #
 
-![YouTube Logo Image](assets/img/youtube-logo.png)
+<!-- ![YouTube Logo Image](assets/img/youtube-logo.png) -->
+
+<p align="center">
+  <a href="https://www.youtube.com">
+    <img max-width="640px" max-height="360px" src="assets/img/youtube-logo.png" alt="YouTube" />
+  </a>
+</p>
 
 `youtube` `video` `downloader` `youtube-dl` `mpeg` `mp4` `mkv`
 
 ---
 
-<details open>
-  <summary>Package: youtube-dl</summary>
-  <h5>Downloader of videos from YouTube and other sites</h5>
+<details>
+  <summary>Credit: <strong>youtube-dl</strong></summary>
+  <pre><p> - Downloader of videos</p></pre>
   <p>
-    youtube-dl is a small command-line program to download videos from
-    YouTube.com and other sites that don't provide direct links to the
-    videos served
+**youtube-dl** is a small command-line program to download videos from
+YouTube.com and other sites that don't provide direct links to the
+videos served
   </p>
   <p>
-  It allows the user, among other things, to choose a specific video
-  quality to download (if available) or let the program automatically
-  determine the best (or worst) quality video to grab. It supports
-  downloading entire playlists and all videos from a given user.
+It allows the user, among other things, to choose a specific video
+quality to download (if available) or let the program automatically
+determine the best (or worst) quality video to grab. It supports
+downloading entire playlists and all videos from a given user.
   </p>
   <div>
-    <a href="https://rg3.github.com/youtube-dl/">Homepage</a>
+    <a href="https://rg3.github.com/youtube-dl/"><small>Homepage</small></a>
   </div>
 </details>
 
@@ -69,21 +75,27 @@ $ youtube-dl --batch-file download-list.txt
 > The -o option allows users to indicate a template for the output file names.
 
 ```shell
-# Include youtube id
-$ youtube-dl -f mp4 -o '/tmp/%(title)s_%(id)s.%(ext)s' "https://www.youtube.com/watch?v=8QSl_t65wnw"
+# youtube id
+$ youtube-dl -f mp4 \
+             -o '/tmp/%(title)s_%(id)s.%(ext)s' \
+             "https://www.youtube.com/watch?v=8QSl_t65wnw"
 [download] Resuming download at byte 1108268
 [download] Destination: /tmp/Volcano Eruption Power Comparison_8QSl_t65wnw.mp4
 ```
 
 ```shell
-# Include duration
-$ youtube-dl -f mp4 -o '/tmp/%(title)s_[%(duration)0ds]_[%(id)s].%(ext)s' "https://www.youtube.com/watch?v=8QSl_t65wnw"
+# duration
+$ youtube-dl -f mp4 \
+             -o '/tmp/%(title)s_[%(duration)0ds]_[%(id)s].%(ext)s' \
+             "https://www.youtube.com/watch?v=8QSl_t65wnw"
 [download] Destination: /tmp/Volcano Eruption Power Comparison_[318s]_[8QSl_t65wnw].mp4
 ```
 
 ```shell
-# Include resolution
-$ youtube-dl -f mp4 -o '/tmp/%(title)s_[%(duration)0ds]_[%(id)s]-%(resolution)s.%(ext)s' "https://www.youtube.com/watch?v=8QSl_t65wnw"
+# resolution
+$ youtube-dl -f mp4 \
+             -o '/tmp/%(title)s_[%(duration)0ds]_[%(id)s]-%(resolution)s.%(ext)s' \
+             "https://www.youtube.com/watch?v=8QSl_t65wnw"
 [download] Destination: /data/downloads/youtube/Volcano Eruption Power Comparison_[318s]_[8QSl_t65wnw]-1280x650.mp4
 ```
 
@@ -105,7 +117,7 @@ Note that by default configuration file may not exist so you may need to create 
 $ touch /etc/youtube-dl.conf
 ```
 
-### Examples ###
+### Most useful options explained ###
 
 ```shell
 # Lines starting with # are comments
@@ -131,7 +143,6 @@ $ touch /etc/youtube-dl.conf
 # Save all videos in directory
 -o '/data/downloads/youtube/%(title)s_[%(duration)0ds]_[%(id)s]-%(resolution)s.%(ext)s'
 ```
-
 
 ---
 

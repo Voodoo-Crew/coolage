@@ -23,7 +23,7 @@
 <meta name="copyright"content="company name" />
 <meta name="language" content="en" />
 <meta name="robots" content="index,follow,archive" />
-<meta name="revised" content="Monday, June 11th, 2018, 09:15 am" />
+<meta name="revised" content="Monday, November 5th, 2018, 09:15 am" />
 <meta name="abstract" content="" />
 <meta name="topic" content="" />
 <meta name="summary" content="" />
@@ -49,7 +49,7 @@
 <meta name="og:title" content="The Rock" />
 <meta name="og:type" content="movie" />
 <meta name="og:url" content="http://www.imdb.com/title/tt0117500/" />
-<meta name="og:image" content="http://ia.media-imdb.com/rock.jpg" />
+<meta name="og:image" content="https://m.media-aws.com/images/M/MV5BMT._V1_.jpg" />
 <meta name="og:site_name" content="IMDb" />
 <meta name="og:description" content="Movie description goes here ..." />
 
@@ -208,7 +208,9 @@ Here's some examples:
 <link rel="stylesheet" href="http://wordpress.org/style/iphone.css" media="only screen and (max-device-width: 480px)" type="text/css" />
 ```
 
-## Resources ##
+---
+
+## Credits ##
 
 - [Web Fundamentals](https://developers.google.com/web/)
 - [Apple Meta Tags](https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html)

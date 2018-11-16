@@ -1,4 +1,4 @@
-# **BASH tools** to easy operate on media files #
+# **BASH tools** - easy operate on media #
 
 ![FFmpeg Logo Image](assets/img/ffmpeg-logo.png)
 
