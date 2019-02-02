@@ -1,6 +1,10 @@
-# Makefile documentation highlights #
+<p align="center">
+  <img max-width="613px" max-height="194px" src="../assets/img/Makefile-logo-001.jpg" alt="GNU Makefile logo" />
+</p>
 
----
+<p align="center">
+  <h1 class="text-center">Makefile: Documentation highlights</h1>
+</p>
 
 ## Dealing with assignments ##
 There are different ways of assigning variables in a Makefile. They are (type of assignment, followed by the operator in parentheses):
@@ -80,6 +84,68 @@ Otherwise do nothing.
 .PHONY: check-symlinks
 check-symlinks:
 	@ [ -L somedir/assets ] || (cd somedir; ln -s ../assets/ assets)
+```
+
+---
+
+## Set/fix owners of files and dirs and their permissions ##
+
+- ```664``` equals to *rw-rw-r--*
+- ```775``` equals to *rwxrwxr-x*
+- ```a+x``` add --x permission for *all* users
+- ```2>/dev/null``` mute any output in *stderr*
+
+
+```Makefile
+.PHONY: rights
+rights:
+	@ find . -type f -exec chmod 664 {} 2>/dev/null \;
+	@ find . -type d -exec chmod 775 {} 2>/dev/null \;
+	@ find . -type f -name "*.sh" -exec chmod a+x {} 2>/dev/null \;
+```
+
+---
+
+## Colors definition (from "Color Bash Prompt" HowTo) ##
+
+```Makefile
+##  Regular  ##
+Black=[0;1;30m
+Red=[0;1;31m
+Green=[0;1;32m
+Yellow=[0;1;33m
+Blue=[0;1;34m
+Purple=[0;1;35m
+Cyan=[0;1;36m
+White=[0;1;37m
+Orange=[38;5;178m
+
+##  Bold  ##
+BBlack=[1;1;30m
+BBlue=[1;1;34m
+BCyan=[1;1;36m
+BRed=[1;1;31m
+BGreen=[1;1;32m
+BYellow=[1;1;33m
+BPurple=[1;1;35m
+BWhite=[1;1;37m
+
+##  Background  ##
+On_Black=[40m
+On_Red=[41m
+On_Green=[42m
+On_Yellow=[43m
+On_Blue=[44m
+On_Purple=[45m
+On_Cyan=[46m
+On_White=[47m
+
+##  Color Reset  ##
+NC=[m
+
+##  Helpers  ##
+ALERT=${BWhite}${On_Red}
+
 ```
 
 ---
