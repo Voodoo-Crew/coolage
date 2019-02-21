@@ -1,12 +1,16 @@
-# YouTube video downloader #
+<!-- # YouTube video downloader # -->
 
-<!-- ![YouTube Logo Image](assets/img/youtube-logo.png) -->
+<p align="center">
+  <h1 align="center">YouTube Video Downloader</h1>
+</p>
 
 <p align="center">
   <a href="https://www.youtube.com">
     <img max-width="640px" max-height="360px" src="assets/img/youtube-logo.png" alt="YouTube" />
   </a>
 </p>
+
+<!-- ![YouTube Logo Image](assets/img/youtube-logo.png) -->
 
 `youtube` `video` `downloader` `youtube-dl` `mpeg` `mp4` `mkv`
 
@@ -142,6 +146,19 @@ $ touch /etc/youtube-dl.conf
 
 # Save all videos in directory
 -o '/data/downloads/youtube/%(title)s_[%(duration)0ds]_[%(id)s]-%(resolution)s.%(ext)s'
+
+```
+
+### Download video and extract audio in MP3 format ###
+
+```shell
+SRC="http://www.youtube.com/watch?v=alehFQfI1o0" \
+&& youtube-dl -x \
+  --audio-format mp3 \
+  --audio-quality 320K \
+  --prefer-avconv \
+  -k \
+  ${SRC} ;
 ```
 
 ---
