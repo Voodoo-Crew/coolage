@@ -76,7 +76,12 @@ Note that these can be either relative or absolute paths.
 
 Then you can stream copy or re-encode your files:
 ```shell
-$ ffmpeg -f concat -safe 0 -i files-list.txt -c copy -y output.mp4
+$ ffmpeg -hide_banner \
+				 -f concat \
+				 -safe 0 \
+				 -i files-list.txt \
+				 -c copy \
+				 -y output.mp4 ;
 ```
 The `-safe 0` above is not required if the paths are relative.
 
@@ -97,7 +102,11 @@ TBD
 ## Bitstream Filters ##
 
 ```shell
-$ ffmpeg -i INPUT -c:v copy -bsf:v filter1[=opt1=str1:opt2=str2][,filter2] OUTPUT
+$ ffmpeg -hide_banner \
+				 -i INPUT \
+				 -c:v copy \
+				 -bsf:v filter1[=opt1=str1:opt2=str2][,filter2] \
+				 -y OUTPUT ;
 ```
 
 ---
