@@ -1,10 +1,7 @@
 # BASH tips, notes and a lot of other cool and pretty stuff #
 
-[![Standard Version](https://img.shields.io/badge/release-standard%20version-brightgreen.svg?style=plastic)](https://github.com/conventional-changelog/standard-version)
-[![Contributors](https://img.shields.io/github/contributors/Voodoo-Crew/coolage.svg)](https://github.com/Voodoo-Crew/coolage/graphs/contributors)
-
 <p align="center">
-  <img src="../assets/img/bash-logo-web.png" alt="Bash Logo" />
+  <img src="../assets/img/bash-logo-web.png" style="width:376px; height:158px" alt="Bash Logo" />
 </p>
 
 `bash` `tips` `gists`
