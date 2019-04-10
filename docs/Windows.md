@@ -1,7 +1,11 @@
-# Windows Tips #
+<!-- # Windows Tips # -->
 
 <p align="center">
-  <img src="../assets/img/microsoft-logo.png" style="width:420px; height:155px" alt="Microsoft Windows Logo" />
+  <h1 class="text-center">Windows Tips</h1>
+</p>
+
+<p align="center">
+  <img src="../assets/img/microsoft-logo.png" max-width="420px" max-height="155px" alt="Microsoft Windows Logo" />
 </p>
 
 `windows` `hotkeys` `cmd` `bat` `tips` `gist` `howto`
@@ -141,3 +145,7 @@ Windows `Run...` menu shortcut to **Settings Panel** utilities
 | tourstart | Windows XP Tour Wizard
 | iexpress | Iexpress Wizard
 | winchat | Microsoft Chat
+
+---
+
+:scorpius:

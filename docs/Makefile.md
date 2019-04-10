@@ -1,5 +1,5 @@
 <p align="center">
-  <img max-width="613px" max-height="194px" src="../assets/img/Makefile-logo-001.jpg" alt="GNU Makefile logo" />
+  <img src="../assets/img/Makefile-logo-001.jpg" max-width="613px" max-height="194px" alt="GNU Makefile logo" />
 </p>
 
 <p align="center">

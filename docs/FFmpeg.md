@@ -20,7 +20,7 @@ $ sudo apt-get install    \
     libflite1
 ```
 
-### Extended version from [MLT framework documentation](https://www.mltframework.org/docs/buildscripts/) ###
+### Extended version from [MLT framework](https://www.mltframework.org/docs/buildscripts/) documentation ###
 
 ```shell
 $ sudo apt-get install  \
@@ -69,40 +69,44 @@ Type `./configure` to create the configuration. A list of configure
 options is printed by running `configure --help`.
 
 ```shell
-$ ./configure --enable-gpl              \
-              --enable-filter=drawtext  \
-              --enable-filter=drawgrid  \
-              --enable-libopenjpeg      \
-              --enable-libfreetype      \
-              --enable-libfribidi       \
-              --enable-libx264          \
-              --enable-libass           \
-              --enable-libmp3lame       \
-              --enable-libflite
+$ ./configure               \
+  --enable-gpl              \
+  --enable-filter=drawtext  \
+  --enable-filter=drawgrid  \
+  --enable-libopenjpeg      \
+  --enable-libfreetype      \
+  --enable-libfribidi       \
+  --enable-libx264          \
+  --enable-libass           \
+  --enable-libmp3lame       \
+  --enable-libflite
 ```
 
-  `configure` can be launched from a directory different from the FFmpeg
+`configure` can be launched from a directory different from the FFmpeg
 sources to build the objects out of tree. To do this, use an absolute
 path when launching `configure`, e.g. `/ffmpeg-dir/ffmpeg/configure`.
 
 ## 4. Build ##
 
 ### 4.1 ###
+
+Build FFmpeg. GNU Make 3.81 or later is required.
+
 ```shell
 $ make
 ```
-Build FFmpeg. GNU Make 3.81 or later is required.
 
 ### 4.2 ###
+
+Install all binaries and libraries you built.
+
 ```shell
 $ make install
 ```
-Install all binaries and libraries you built.
 
-NOTICE
----
+## :warning: NOTICE ##
 
- - Non system dependencies (e.g. libx264, libvpx) are disabled by default.
+- Non system dependencies (e.g. libx264, libvpx) are disabled by default.
 
 ---
 

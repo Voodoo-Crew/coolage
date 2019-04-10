@@ -1,7 +1,11 @@
-# Socket.io #
+<!-- # Socket.io # -->
 
 <p align="center">
-  <img src="../assets/img/io-logo.png" alt="IO Logo" style="width:150px; height:150px" />
+  <h1 class="text-center">Socket.io</h1>
+</p>
+
+<p align="center">
+  <img src="../assets/img/io-logo.png" max-width="150px" max-height="150px" alt="IO Logo" />
 </p>
 
 `socket.io` `tips` `gists`
@@ -72,11 +76,11 @@ function onConnect (socket) {
 
 ### Related info ###
 
- - [GitHub / Basic writing and formatting syntax](https://help.github.com/articles/basic-writing-and-formatting-syntax/)
- - [BitBucket Markdown Howto](https://bitbucket.org/tutorials/markdowndemo)
- - [Creating an Automated Build](https://docs.docker.com/docker-hub/builds/)
- - [Linking containers](https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks.md)
- - [Cross-host linking containers](https://docs.docker.com/engine/admin/ambassador_pattern_linking.md)
+- [GitHub / Basic writing and formatting syntax](https://help.github.com/articles/basic-writing-and-formatting-syntax/)
+- [BitBucket / Markdown Howto](https://bitbucket.org/tutorials/markdowndemo)
+- [Docker / Creating an Automated Build](https://docs.docker.com/docker-hub/builds/)
+- [Docker / Linking containers](https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks.md)
+- [Docker / Cross-host linking containers](https://docs.docker.com/engine/admin/ambassador_pattern_linking.md)
 
 ---
 
