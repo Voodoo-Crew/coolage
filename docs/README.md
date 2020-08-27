@@ -19,14 +19,14 @@
 - [DOS Commands](./Cmd.md)
 - [Docker snippets](./Docker-Snippets.md)
 - [Installing FFmpeg](./FFmpeg.md)
-- [HTML Meta Tags List](./HTML-META-Tags.md)
-- [Makefile documentation highlights](./Makefile.md)
-- [Common Process Lifecycle Statuses](./Process-Statuses.md)
-- [React](./React.md)
+- [HTML Meta Tags](./HTML-META-Tags.md) List
+- [Makefile documentation](./Makefile.md) highlights
+- Common [Process Lifecycle Statuses](./Process-Statuses.md)
+- [React](./React.md) notes
 - [Require.js](./RequireJS.md)
-- [Socket.io Emit Cheatsheet](./Socket.io.md)
+- [Socket.io](./Socket.io.md) Emit Cheatsheet
 - [Windows hotkeys](./Windows.md)
 
 ---
 
-:scorpius:
+:scorpion:
