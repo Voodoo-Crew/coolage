@@ -48,7 +48,7 @@ $ sudo docker pull store/percona/percona-server:5.7.14
 
 # docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' mongo_instance_001
 
-# docker images
+### docker images
 REPOSITORY                                TAG                 IMAGE ID            CREATED             SIZE
 tbaltrushaitis/docker-mongodb             3.4                 698f1a70d787        14 seconds ago      388.2 MB
 docker.io/tbaltrushaitis/docker-mongodb   latest              2ea6ca6f43d0        23 minutes ago      388.2 MB
@@ -92,7 +92,7 @@ docker run
 ```
 
 ##  ============================================================  ##
-##  #  Docker Compose: default environment variables
+##  Docker Compose: default environment variables
 ##  ============================================================  ##
 ##  https://docs.docker.com/compose/env-file/
 
@@ -110,67 +110,85 @@ DOCKER_HOST
 DOCKER_TLS_VERIFY
 
 ##  ============================================================  ##
-##  #  Docker Volumes
+##  Docker Volumes
 ##  ============================================================  ##
 
-# docker volume create --driver local --label Storage-MongoDB --name storage_mongodb
-# docker volume create --driver local --label Storage-Mysql --name storage_mysql
-# docker volume create --driver local --label Storage-AppCode --name storage_appcode
+```bash
+docker volume create --driver local --label Storage-MongoDB --name storage_mongodb
+docker volume create --driver local --label Storage-Mysql --name storage_mysql
+docker volume create --driver local --label Storage-AppCode --name storage_appcode
+```
 
-
-# Just specify a path and let the Engine create a volume
+### Just specify a path and let the Engine create a volume
+```bash
   - /var/lib/mysql
+```
 
-# Specify an absolute path mapping
+### Specify an absolute path mapping
+
+```bash
   - /opt/data:/var/lib/mysql
+```
 
-# Path on the host, relative to the Compose file
+### Path on the host, relative to the Compose file
+```bash
   - ./cache:/tmp/cache
+```
 
-# User-relative path
+### User-relative path
+```bash
   - ~/configs:/etc/configs/:ro
+```
 
-# Named volume
+### Named volume
+```bash
   - datavolume:/var/lib/mysql
-
+```
 
 ##  ============================================================  ##
 ##  Docker Compose on CentOS 7
 ##  ============================================================  ##
 
+```bash
 curl -L https://github.com/docker/compose/releases/download/1.10.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
-
+```
 
 ##  ============================================================  ##
 ##  Local Persist Volume Plugin for Docker
 ##  ============================================================  ##
 
+```bash
 curl -fsSL https://raw.githubusercontent.com/CWSpear/local-persist/master/scripts/install.sh | sudo bash
+```
 
-
-##  ============================================================  ##
+###  ============================================================  ##
 ##  RANCHER setup
-##  ============================================================  ##
+###  ============================================================  ##
 
-##  Launching Management Server
+###  Launching Management Server
+```bash
 docker run -d --restart=unless-stopped -p 8080:8080 rancher/server
+```
 
-##  Rancher Client
+###  Rancher Client
+```bash
 docker run  -d --privileged                                 \
             -v /var/run/docker.sock:/var/run/docker.sock    \
             -v /var/lib/rancher:/var/lib/rancher            \
             rancher/agent:v1.1.3                            \
             http://rancher.hunter-love.ru/v1/scripts/84C41DC810CDB3746BF6:1484733600000:pVBrrC3xrvqPE80tSdtUjGJo2o
-##  ============================================================  ##
+```
+###  ============================================================  ##
 
+```bash
 docker build --rm -t "ubuntu:16.04" -f Dockerfile .
-
              --tag="docker.io/ubuntu:16.04" \
              -o "3070":"3070" \
              -v ${APP_DIR} \
+```
 
-
+```bash
 docker build -m 1024M   \
              --no-cache  \
              --force-rm  \
@@ -179,7 +197,9 @@ docker build -m 1024M   \
              -v "/storage:${APP_DIR}"   \
              -f Dockerfile     \
              .
+```
 
+```bash
 docker tag "ubuntu:16.04" "tbaltrushaitis/nodejs:6.9.1"
 
 docker push "tbaltrushaitis/nodejs:6.9.1"
@@ -193,9 +213,11 @@ docker run  -it \
             "tbaltrushaitis/nodejs:6.9.1"
 
             --group-add="no"
+```
 
 ##  ============================================================  ##
 
+```bash
 $ sudo -i \
   && set REPO "deb https://apt.dockerproject.org/repo ubuntu-trusty main" \
   && echo "${REPO}" | sudo tee /etc/apt/sources.list.d/docker.list
@@ -214,7 +236,6 @@ docker:
 
 # apt-cache policy docker-compose
 N: Unable to locate package docker-compose
-
 
 # apt-cache policy docker-*
 kdocker:
@@ -255,5 +276,6 @@ docker.io:
         100 /var/lib/dpkg/status
      0.9.1~dfsg1-2 0
         500 http://ua.archive.ubuntu.com/ubuntu/ trusty/universe i386 Packages
+```
 
 ##  ============================================================  ##
