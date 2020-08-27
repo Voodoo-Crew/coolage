@@ -1,4 +1,8 @@
-# Require.js #
+<!-- # Require.js # -->
+
+<p align="center">
+  <h1 class="text-center">Require.js</h1>
+</p>
 
 ## Map Config ##
 

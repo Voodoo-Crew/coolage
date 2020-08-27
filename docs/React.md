@@ -2,7 +2,7 @@
 
 **React** - is a JavaScript library for building user interfaces.
 
-Below is a list of notes made while reading the official [React](https://reactjs.org/docs/) documentation
+Below is a list of notes made while reading the official [React documentation](https://reactjs.org/docs/)
 
 ---
 
@@ -28,16 +28,19 @@ class Clock extends React.Component {
   }
 }
 ```
+---
 
 ## Lifecycle Methods ##
 
 ```javascript
 class LifecyclesList extends React.Component {
 
+
   constructor(props) {
     super(props);
     this.state = {};
   }
+
 
   // Runs after the component output has been rendered to the DOM.
   componentDidMount() {
@@ -46,9 +49,12 @@ class LifecyclesList extends React.Component {
     });
   }
 
+
+  // If the component is ever removed from the DOM, React calls it:
   componentWillUnmount() {
 
   }
+
 
   render() {
     return (
@@ -59,6 +65,96 @@ class LifecyclesList extends React.Component {
   }
 }
 ```
+---
+
+## Using State Correctly ##
+
+There are three important things about `setState()`
+
+### Do Not Modify State Directly ###
+
+```javascript
+// Wrong
+this.state.comment = 'Hello';
+```
+Instead, use `setState()`:
+
+```javascript
+// Correct
+this.setState({comment: 'Hello'});
+```
+
+The only place where you can assign `this.state` is the constructor.
+
+### State Updates May Be Asynchronous ###
+
+React may batch multiple `setState()` calls into a single update for performance.
+Because `this.props` and `this.state` may be updated asynchronously,
+you should not rely on their values for calculating the next state.
+
+```javascript
+// Wrong
+this.setState({
+  counter: this.state.counter + this.props.increment,
+});
+```
+
+Instead use a second form of `setState()` that accepts a function rather than
+an object. That function will receive the previous state as the first argument,
+and the props at the time the update is applied as the second argument:
+
+```javascript
+// Correct
+this.setState((state, props) => ({
+  counter: state.counter + props.increment
+}));
+```
+It also works with regular functions:
+
+```javascript
+// Correct
+this.setState(function(state, props) {
+  return {
+    counter: state.counter + props.increment
+  };
+});
+```
+
+### State Updates are Merged ###
+
+When you call `setState()`, React merges the object you provide into the current
+ state. For example, your state may contain several independent variables:
+
+```javascript
+constructor(props) {
+  super(props);
+  this.state = {
+    posts: [],
+    comments: []
+  };
+}
+```
+
+Then you can update them independently with separate `setState()` calls:
+
+```javascript
+componentDidMount() {
+  fetchPosts().then(response => {
+    this.setState({
+      posts: response.posts
+    });
+  });
+
+  fetchComments().then(response => {
+    this.setState({
+      comments: response.comments
+    });
+  });
+}
+```
+The merging is shallow, so `this.setState({comments})` leaves `this.state.posts` intact, but completely replaces `this.state.comments`.
+
+---
 
 ## Handling Events ##
 
@@ -79,10 +175,9 @@ Returning `null` from a component’s render method does not affect the firing o
 
 ---
 
-### Related Articles ###
+## List of articles used ##
 
- - [React](https://reactjs.org/docs/)
- - [React Native](http://facebook.github.io/react-native/)
+[React lifecycle diagram](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
 
 ---
 

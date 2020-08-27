@@ -1,4 +1,8 @@
-# Docs #
+<!-- # Docs # -->
+
+<p align="center">
+  <h1 class="text-center">Docs</h1>
+</p>
 
 <p align="center">
   Collection of scripts, docs, snippets, configs and other useful lines

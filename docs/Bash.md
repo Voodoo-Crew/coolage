@@ -1,7 +1,11 @@
-# BASH tips, notes and a lot of other cool and pretty stuff #
+<!-- # BASH tips, notes and a lot of other cool and pretty stuff # -->
 
 <p align="center">
-  <img src="../assets/img/bash-logo-web.png" style="width:376px; height:158px" alt="Bash Logo" />
+  <h1 class="text-center">BASH tips, notes and a lot of other cool and pretty stuff</h1>
+</p>
+
+<p align="center">
+  <img src="../assets/img/bash-logo-web.png" max-width="376px" max-height="158px" alt="Bash Logo" />
 </p>
 
 `bash` `tips` `gists`
@@ -86,10 +90,10 @@ The caller builtin displays the current call stack using this information.
 ### Related info ###
 
  - [GitHub / Basic writing and formatting syntax](https://help.github.com/articles/basic-writing-and-formatting-syntax/)
- - [BitBucket Markdown Howto](https://bitbucket.org/tutorials/markdowndemo)
- - [Creating an Automated Build](https://docs.docker.com/docker-hub/builds/)
- - [Linking containers](https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks.md)
- - [Cross-host linking containers](https://docs.docker.com/engine/admin/ambassador_pattern_linking.md)
+ - [BitBucket / Markdown Howto](https://bitbucket.org/tutorials/markdowndemo)
+ - [Docker / Creating an Automated Build](https://docs.docker.com/docker-hub/builds/)
+ - [Docker / Linking containers](https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks.md)
+ - [Docker / Cross-host linking containers](https://docs.docker.com/engine/admin/ambassador_pattern_linking.md)
 
 ---
 

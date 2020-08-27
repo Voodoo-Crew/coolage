@@ -1,7 +1,11 @@
-# DOS Commands #
+<!-- # DOS Commands # -->
 
 <p align="center">
-  <img src="../assets/img/MS_DOS_Logo.png" style="width:390px; height:408px" alt="DOS Logo" />
+  <h1 class="text-center">DOS Commands</h1>
+</p>
+
+<p align="center">
+  <img src="../assets/img/MS_DOS_Logo.png" max-width="390px" max-height="408px" alt="DOS Logo" />
 </p>
 
 `dos` `windows` `cmd` `bat` `tips` `gist` `howto`
