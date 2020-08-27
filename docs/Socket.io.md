@@ -5,10 +5,13 @@
 </p>
 
 <p align="center">
-  <img src="../assets/img/io-logo.png" max-width="150px" max-height="150px" alt="IO Logo" />
+  <a href="#">
+    <img src="../assets/img/io-logo.png" max-width="50px" max-height="50px" alt="IO Logo" />
+  </a>
 </p>
 
-`socket.io` `tips` `gists`
+
+`tips` `gists` `howto` `socket.io`
 
 ---
 
