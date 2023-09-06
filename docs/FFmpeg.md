@@ -12,7 +12,6 @@ $ sudo apt-get install  \
   libfont-freetype-perl \
   vflib3                \
   libfribidi-dev        \
-  libopenjpeg-dev       \
   libx264-dev           \
   libavutil-dev         \
   libass-dev            \
@@ -20,22 +19,23 @@ $ sudo apt-get install  \
   libflite1             \
 ;
 ```
+<!--/ libopenjpeg-dev /-->
 
 ```shell
-$ sudo apt install                \
-  -y                              \
-  libopenjp2-7/bionic-updates     \
-  libopenjp2-7-dev/bionic-updates \
-  libopenjp2-tools/bionic-updates \
+$ sudo apt install \
+  -y               \
+  libopenjp2-7     \
+  libopenjp2-7-dev \
+  libopenjp2-tools \
 ;
 ```
 
 ```shell
-$ sudo apt install          \
-  -y                        \
-  libvpx5/bionic-updates    \
-  libvpx-dev/bionic-updates \
-  vpx-tools/bionic-updates  \
+$ sudo apt install \
+  -y         \
+  libvpx7    \
+  libvpx-dev \
+  vpx-tools  \
 ;
 ```
 
@@ -59,17 +59,17 @@ $ sudo apt-get install  \
   ladspa-sdk            \
   libjack-dev           \
   libsox-dev            \
-  libsdl-dev            \
+  libsdl1.2-dev         \
   libgtk2.0-dev         \
   libsoup2.4-dev        \
-  libqt4-dev            \
   libexif-dev           \
   libtheora-dev         \
   libvdpau-dev          \
   libvorbis-dev         \
-  python-dev            \
+  python2-dev           \
 ;
 ```
+<!--/ libqt4-dev /-->
 
 ## 2. Download sources ##
 
@@ -79,10 +79,10 @@ $ cd /opt/git
 ```
 
 ```shell
-# origin
+# origin (recommended)
 $ git clone git://source.ffmpeg.org/ffmpeg.git
 
-# github-mirror
+# github mirror
 $ git clone https://github.com/FFmpeg/FFmpeg ffmpeg
 ```
 

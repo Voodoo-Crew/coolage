@@ -1,11 +1,11 @@
 <!-- # Windows Tips # -->
 
 <p align="center">
-  <h1 class="text-center">Windows Tips</h1>
+  <h1 class="text-center">Tips & Tricks</h1>
 </p>
 
 <p align="center">
-  <img src="../assets/img/microsoft-logo.png" max-width="420px" max-height="155px" alt="Microsoft Windows Logo" />
+  <img src="../assets/img/windows-logo-lg.png" max-width="512px" max-height="512px" alt="Microsoft Windows" />
 </p>
 
 `windows` `hotkeys` `cmd` `bat` `tips` `gist` `howto`
@@ -18,34 +18,34 @@ Windows `Run...` menu shortcut to **Settings Panel** utilities
 
 | Command | Invoke |
 |:--------|:-------|
-| :tophat: | **Administration**
-| control admintools | Administrative Tools
-| compmgmt.msc | Computer Management
-| eventvwr.msc | Event Viewer
-| odbccp32.cpl | ODBC Data Source Administrator
-| powercfg.cpl | Power Configuration
-| services.msc | Services
-| nusrmgr.cpl | User Account Management
-| wmimgmt.msc | Windows Management Infrastructure
-|   | **System**
-| msconfig | System Configuration
-| timedate.cpl | Date and Time
-| directx.cpl | Direct X Control Panel (If Installed)*
-| dxdiag | Direct X Troubleshooter
-| ciadv.msc | Indexing Service
-| packager | Object Packager
-| perfmon.msc | Performance Monitor
-| perfmon | Performance Monitor
-| regedit | Registry Editor
-| regedit32 | Registry Editor
-| control schedtasks | Scheduled Tasks
-| mmsys.cpl | Sounds and Audio
-| sysedit | System Configuration Editor
-| msconfig | System Configuration Utility
-| sysdm.cpl | System Properties
-| wuaucpl.cpl | Automatic Updates
-| wupdmgr | Windows Update Launches
-|   | **Security**
+| :tophat: | **Administration** |
+| control admintools | Administrative Tools |
+| compmgmt.msc | Computer Management |
+| eventvwr.msc | Event Viewer |
+| odbccp32.cpl | ODBC Data Source Administrator |
+| powercfg.cpl | Power Configuration |
+| services.msc | Services |
+| nusrmgr.cpl | User Account Management |
+| wmimgmt.msc | Windows Management Infrastructure |
+| :hammer_and_wrench: | **System** |
+| msconfig | System Configuration |
+| timedate.cpl | Date and Time |
+| directx.cpl | Direct X Control Panel (If Installed)* |
+| dxdiag | Direct X Troubleshooter |
+| ciadv.msc | Indexing Service |
+| packager | Object Packager |
+| perfmon.msc | Performance Monitor |
+| perfmon | Performance Monitor |
+| regedit | Registry Editor |
+| regedit32 | Registry Editor |
+| control schedtasks | Scheduled Tasks |
+| mmsys.cpl | Sounds and Audio |
+| sysedit | System Configuration Editor |
+| msconfig | System Configuration Utility |
+| sysdm.cpl | System Properties |
+| wuaucpl.cpl | Automatic Updates |
+| wupdmgr | Windows Update Launches |
+| :lock: | **Security**
 | certmgr.msc | Certificate Manager
 | wscui.cpl | Security Center
 | gpedit.msc | Group Policy Editor (XP Prof)
@@ -54,7 +54,7 @@ Windows `Run...` menu shortcut to **Settings Panel** utilities
 | password.cpl | Password Properties
 | rsop.msc | Resultant Set of Policy (XP Prof)
 | syskey | Windows System Security Tool
-|   | **Disk / filesystem**
+| :cd: | **Disk / filesystem**
 | chkdsk | Check Disk Utility
 | cleanmgr | Disk Cleanup Utility
 | dfrg.msc | Disk Defragment
@@ -69,16 +69,16 @@ Windows `Run...` menu shortcut to **Settings Panel** utilities
 | sfc /cachesize=x | System File Checker Utility (Set Cache Size to size x)
 | ntmsmgr.msc | Removable Storage
 | ntmsoprq.msc | Removable Storage Operator Requests
-|   | **Folders**
+| :file_folder: | **Folders**
 | control folders | Folders Properties
 | fonts | Fonts Folder
 | fsmgmt.msc | Shared Folders
-|   | **Accessibility**
+| :id: | **Accessibility**
 | access.cpl | Accessibility Controls
 | osk | On Screen Keyboard
 | magnify | Windows Magnifier
 | utilman | Utility Manager
-|   | **UI**
+| :high_brightness: | **UI**
 | control desktop | Display Properties
 | desk.cpl | Display Properties
 | control color | Display Properties (w/Appearance Tab Preselected)
@@ -88,7 +88,7 @@ Windows `Run...` menu shortcut to **Settings Panel** utilities
 | main.cpl | Mouse Properties
 | intl.cpl | Regional Settings
 | nvtuicpl.cpl | Nview Desktop Manager (If Installed)
-|   | **Hardware**
+|  :computer_mouse: | **Hardware**
 | devmgmt.msc | Device Manager
 | hdwwiz.cpl | Add Hardware Wizard
 | fsquirt | Bluetooth Transfer Wizard
@@ -97,11 +97,11 @@ Windows `Run...` menu shortcut to **Settings Panel** utilities
 | printers | Printers Folder
 | telephon.cpl | Phone and Modem Options
 | sticpl.cpl | Scanners and Cameras
-|   | **Software**
+| :computer: | **Software**
 | appwiz.cpl | Add/Remove Programs
 | dcomcnfg | Component Services
 | drwtsn32 | Dr. Watson System Troubleshooting Utility
-|   | **Networking**
+| :fax: | **Networking**
 | control netconnections | Network Connections
 | ncpa.cpl | Network Connections
 | netsetup.cpl | Network Setup Wizard
@@ -117,11 +117,11 @@ Windows `Run...` menu shortcut to **Settings Panel** utilities
 | mstsc | Remote Desktop
 | telnet | Telnet Client
 | firewall.cpl | Windows Firewall
-|   | **Session**
+| :key: | **Session**
 | logoff | Logs You Out Of Windows
 | shutdown | Shuts Down Windows
 | taskmgr | Task Manager
-|   | **Tools**
+| :wrench: | **Tools**
 | cmd | Command Prompt
 | calc | Calculator
 | charmap | Character Map
@@ -129,7 +129,7 @@ Windows `Run...` menu shortcut to **Settings Panel** utilities
 | notepad | Notepad
 | eudcedit | Private Character Editor
 | write | Wordpad
-|   | **Applications**
+| :keyboard: | **Applications**
 | jpicpl32.cpl | Java Control Panel (If Installed)
 | javaws | Java Control Panel (If Installed)
 | ac3filter.cpl | Opens AC3 Filter (If Installed)
@@ -141,7 +141,7 @@ Windows `Run...` menu shortcut to **Settings Panel** utilities
 | mshearts | Hearts Card Game
 | winmine | Minesweeper Game
 | spider | Spider Solitare Card Game
-|   | **Misc**
+| :label: | **Misc**
 | tourstart | Windows XP Tour Wizard
 | iexpress | Iexpress Wizard
 | winchat | Microsoft Chat
