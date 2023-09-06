@@ -91,9 +91,6 @@ The caller builtin displays the current call stack using this information.
 
  - [GitHub / Basic writing and formatting syntax](https://help.github.com/articles/basic-writing-and-formatting-syntax/)
  - [BitBucket / Markdown Howto](https://bitbucket.org/tutorials/markdowndemo)
- - [Docker / Creating an Automated Build](https://docs.docker.com/docker-hub/builds/)
- - [Docker / Linking containers](https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks.md)
- - [Docker / Cross-host linking containers](https://docs.docker.com/engine/admin/ambassador_pattern_linking.md)
 
 ---
 
